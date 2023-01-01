@@ -4,6 +4,7 @@ import random
 import os
 import secrets
 import requests
+import pyfiglet
 
 init(convert=True)
 
@@ -22,6 +23,38 @@ ___________.__           ________          __   _______          __         ___
 
 
                     """
+ethstr = """
+
+__________  _____  .__                       _________________________ ___  
+\____    / /     \ |__| ____   ___________   \_   _____/\__    ___/   |   \ 
+  /     / /  \ /  \|  |/    \_/ __ \_  __ \   |    __)_   |    | /    ~    \
+ /     /_/    Y    \  |   |  \  ___/|  | \/   |        \  |    | \    Y    /
+/_______ \____|__  /__|___|  /\___  >__|     /_______  /  |____|  \___|_  / 
+        \/       \/        \/     \/                 \/                 \/
+
+		 """
+
+btcstr = """
+
+__________  _____  .__                       ______________________________  
+\____    / /     \ |__| ____   ___________   \______   \__    ___/\_   ___ \ 
+  /     / /  \ /  \|  |/    \_/ __ \_  __ \   |    |  _/ |    |   /    \  \/ 
+ /     /_/    Y    \  |   |  \  ___/|  | \/   |    |   \ |    |   \     \____
+/_______ \____|__  /__|___|  /\___  >__|      |______  / |____|    \______  /
+        \/       \/        \/     \/                 \/                   \/
+
+		 """
+
+mainbnr = """
+
+__________  _____  .__                     
+\____    / /     \ |__| ____   ___________ 
+  /     / /  \ /  \|  |/    \_/ __ \_  __ \
+ /     /_/    Y    \  |   |  \  ___/|  | \/
+/_______ \____|__  /__|___|  /\___  >__|   
+        \/       \/        \/     \/
+
+		  """
 
 licenseKey = input("license Key: ")
 licenseList = ["admin", "rv2jdli99X", "P023cvB"]
@@ -38,14 +71,13 @@ randomBTC1str = str(randomBTC1)
 
 if licenseKey in licenseList:
 	print(Fore.GREEN + "Key is valid!")
-	result = pyfiglet.figlet_format("ZMiner", font = "doh", width=200)
-	print(Fore.CYAN + result)
+	print(mainbnr)
 
 else:
 	print(Fore.RED + "Key not valid...")
 	print("exit...")
 	time.sleep(2)
-	print("byeee")
+	print("byeee...")
 	time.sleep(1)
 	exit()
 
@@ -55,7 +87,7 @@ crypto = input("What crypto you want mine? ETH/BTC: ")
 
 def ETH():
 	print(title)
-	print(pyfiglet.figlet_format("ZMiner ETH", font = "doh", width=200))
+	print(ethstr)
 	print(Fore.RED + "ENTER A VALID WALLET. IF THE WALLET IS INVALID ALL WALLET YOU HIT WILL BE LOST!")
 
 	with open("btc.txt", "r") as btcWallettxt:
@@ -91,7 +123,7 @@ def ETH():
 
 def BTC():
 	print(title)
-	print(pyfiglet.figlet_format("ZMiner BTC", font = "doh", width=200))
+	print(btcstr)
 	print(Fore.RED + "ENTER A VALID WALLET. IF THE WALLET IS INVALID ALL WALLET YOU HIT WILL BE LOST!")
 
 	with open("btc.txt", "r") as btcWallettxt:
